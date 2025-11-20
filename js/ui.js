@@ -1,5 +1,8 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
+    // Resolve base path for assets so it works from root and subpages
+    var isInSubdir = /\/Paginas\//.test(window.location.pathname);
+    var defaultAvatarPath = isInSubdir ? '../Imagenes/default-avatar.png' : './Imagenes/default-avatar.png';
     // Auth-driven header UI (user avatar/name and dropdown)
     try {
       if (typeof auth !== 'undefined') {
@@ -9,7 +12,7 @@
           if (!userBtn || !userDropdown) return;
 
           if (user) {
-            userBtn.innerHTML = '\n              <img src="' + (user.photoURL || './Imagenes/default-avatar.png') + '" alt="Foto de perfil" class="user-avatar">\n              <span>' + (user.displayName || 'Usuario') + '</span>\n            ';
+            userBtn.innerHTML = '\n              <img src="' + (user.photoURL || defaultAvatarPath) + '" alt="Foto de perfil" class="user-avatar">\n              <span>' + (user.displayName || 'Usuario') + '</span>\n            ';
             userBtn.href = '#';
 
             userBtn.addEventListener('click', function (e) {
