@@ -1,0 +1,246 @@
+/* Estilos para el modal de login */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #A8E6FF;
+    backdrop-filter: blur(150px);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #f1f1f1;
+}
+
+.modal h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.modal .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal input[type="email"],
+.modal input[type="password"],
+.modal input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.modal input:focus {
+    border-color: #A8E6FF;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(168, 230, 255, 0.2);
+}
+
+.modal .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.modal .btn-primary {
+    background-color: #4FC3F7;
+    color: white;
+}
+
+.modal .btn-primary:hover {
+    background-color: #0288D1;
+    transform: translateY(-2px);
+}
+
+.modal .btn-google {
+    background-color: white;
+    color: #444;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.modal .btn-google:hover {
+    background-color: #f8f8f8;
+    transform: translateY(-2px);
+}
+
+.modal .btn-google img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.modal .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.modal .divider::before,
+.modal .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.modal .divider span {
+    padding: 0 10px;
+}
+
+.modal .signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.modal .signup-link a {
+    color: #4FC3F7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.modal .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el formulario de registro */
+.signup-form {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.signup-form h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.signup-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.signup-form input:focus {
+    border-color: #A8E6FF;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(168, 230, 255, 0.2);
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-link a {
+    color: #4FC3F7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Transición suave entre formularios */
+#loginFormContainer,
+#signupFormContainer {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .modal h2 {
+        font-size: 20px;
+    }
+    
+    .signup-form .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .signup-form input[type="text"],
+    .signup-form input[type="email"],
+    .signup-form input[type="password"] {
+        padding: 10px 12px;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

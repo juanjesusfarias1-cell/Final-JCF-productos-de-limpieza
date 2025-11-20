@@ -1,0 +1,135 @@
+/* =============================
+   HEADER (Global)
+   ============================= */
+header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* izquierda (logo) - centro (buscador) - derecha (nav) */
+    align-items: center;
+    padding: 10px 5%;
+    background: #4AB3E3;
+    color: white;
+    position: relative;
+    z-index: 100;
+    gap: 15px;
+}
+
+/* Logo y nombre de la empresa */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.company-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* =============================
+   NAVEGACIÓN DERECHA (Global)
+   ============================= */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 0; /* antes se usaba para flex, ya no es necesario */
+    justify-self: end; /* alinea a la derecha dentro de la tercera columna */
+}
+
+/* Botones de navegación */
+.nav-btn {
+    padding: 8px 16px;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Iconos de navegación (carrito y usuario) */
+.nav-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(233, 40, 40, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(172, 27, 27, 0.2);
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Contador del carrito */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Menú desplegable del usuario */
+.user-section { 
+    position: relative; 
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.user-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    gap: 10px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.user-dropdown a:hover { 
+    background: #f5f5f5; 
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final - Tienda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/stylesproductos.css">
+    <link rel="stylesheet" href="../CSS/modal.css">
+</head>
+<body>
+<!-- Header -->
+    <header>
+        <!-- Logo y nombre de la empresa -->
+        <div class="logo-container">
+            <img src="../Imagenes/Logoempresa.png" alt="Logo empresa" class="logo-img">
+            <p class="company-name">Nombre de la empresa</p>
+        </div>
+
+        <!-- Buscador centrado -->
+        <div class="search-container">
+            <form action="/buscar" method="get" class="search-form" id="productSearchForm" role="search">
+                <div class="search-input-wrapper">
+                    <input type="text" id="productSearchInput" name="q" placeholder="Buscar..." autocomplete="off">
+                    <button type="button" class="clear-search-btn" id="clearSearchBtn" aria-label="Limpiar">×</button>
+                </div>
+                <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+
+        <!-- Navegación derecha -->
+        <nav class="nav-right" aria-label="Navegación principal">
+            <a href="../index.html" class="nav-btn">Inicio</a>
+            <a href="Productos.html" class="nav-btn">Productos</a>
+            <a href="Contactos.html" class="nav-btn">Contactos</a>
+            
+            <!-- Carrito -->
+            <div class="nav-icon" id="cartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+            
+            <!-- Usuario -->
+            <div class="user-section">
+                <a href="#" class="nav-icon" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userDropdown">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <div class="user-dropdown" id="userDropdown" style="display: none;">
+                    <a href="#"><i class="fas fa-user"></i> Mi Perfil</a>
+                    <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<!-- Main Content -->
+    <main>
+        <div> 
+            <h1 class="titulo-productos">PRODUCTOS</h1>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto1.jpg" alt="Producto 1">
+                    <h3>Producto 1</h3>
+                    <p>Descripción breve del producto 1.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto2.jpg" alt="Producto 2">
+                    <h3>Producto 2</h3>
+                    <p>Descripción breve del producto 2.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto3.jpg" alt="Producto 3">
+                    <h3>Producto 3</h3>
+                    <p>Descripción breve del producto 3.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto4.jpg" alt="Producto 4">
+                    <h3>Producto 4</h3>
+                    <p>Descripción breve del producto 4.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto5.jpg" alt="Producto 4">
+                    <h3>Producto 5</h3>
+                    <p>Descripción breve del producto 5.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto6.jpg" alt="Producto 6">
+                    <h3>Producto 6</h3>
+                    <p>Descripción breve del producto 6.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto7.jpg" alt="Producto 7">
+                    <h3>Producto 7</h3>
+                    <p>Descripción breve del producto 7.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto8.jpg" alt="Producto 8">
+                    <h3>Producto 8</h3>
+                    <p>Descripción breve del producto 8.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto9.jpg" alt="Producto 9">
+                    <h3>Producto 9</h3>
+                    <p>Descripción breve del producto 9.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto10.jpg" alt="Producto 10">
+                    <h3>Producto 10</h3>
+                    <p>Descripción breve del producto 10.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto11.jpg" alt="Producto 11">
+                    <h3>Producto 11</h3>
+                    <p>Descripción breve del producto 11.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto12.jpg" alt="Producto 12">
+                    <h3>Producto 12</h3>
+                    <p>Descripción breve del producto 12.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto3.jpg" alt="Producto 13">
+                    <h3>Producto 13</h3>
+                    <p>Descripción breve del producto 13.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto14.jpg" alt="Producto 14">
+                    <h3>Producto 14</h3>
+                    <p>Descripción breve del producto 14.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto15.jpg" alt="Producto 15">
+                    <h3>Producto 15</h3>
+                    <p>Descripción breve del producto 15.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto16.jpg" alt="Producto 16">
+                    <h3>Producto 16</h3>
+                    <p>Descripción breve del producto 16.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto17.jpg" alt="Producto 17">
+                    <h3>Producto 17</h3>
+                    <p>Descripción breve del producto 17.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto18.jpg" alt="Producto 18">
+                    <h3>Producto 18</h3>
+                    <p>Descripción breve del producto 18.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto19.jpg" alt="Producto 19">
+                    <h3>Producto 19</h3>
+                    <p>Descripción breve del producto 19.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto20.jpg" alt="Producto 20">
+                    <h3>Producto 20</h3>
+                    <p>Descripción breve del producto 20.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto21.jpg" alt="Producto 21">
+                    <h3>Producto 21</h3>
+                    <p>Descripción breve del producto 21.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto22.jpg" alt="Producto 22">
+                    <h3>Producto 22</h3>
+                    <p>Descripción breve del producto 22.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto23.jpg" alt="Producto 23">
+                    <h3>Producto 23</h3>
+                    <p>Descripción breve del producto 22.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+                <div class="product-card">
+                    <img src="../Imagenes/Productos/producto24.jpg" alt="Producto 24">
+                    <h3>Producto 24</h3>
+                    <p>Descripción breve del producto 24.</p>
+                    <p class="price">$250.00</p>
+                    <button class="add-to-cart-btn">Agregar al Carrito</button>
+                </div>
+        </div>
+    </main>
+<!-- Footer -->
+    <footer>
+        <div class="footer-contenido">
+            <div class="info-contacto">
+                <a href="https://maps.app.goo.gl/pT2t2ErT3WNMj8AW9" target="_blank" class="enlace-footer">
+                    <i class="fas fa-map-marker-alt"></i> Dirección: AV. 25 de Mayo 400
+                </a>
+            </div>
+            <div class="telefono">
+            <a href="tel:+5412345678" class="enlace-footer">
+                <i class="fas fa-phone"></i> Tel: 1234-5678
+            </a>
+        </div>
+        <div class="redes-sociales">
+            <a href="https://www.instagram.com/jesus_farias_1" target="_blank" class="icono-red">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/5412345678?text=Hola,%20me%20interesa%20saber%20más" target="_blank" class="icono-red">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="derechos">
+            <p>&copy; 2025 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+<!-- Modal de Inicio de Sesión/Registro -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        
+        <!-- Formulario de Inicio de Sesión -->
+        <div id="loginFormContainer">
+            <div class="logo-container">
+                <img src="../Imagenes/Logoempresa.png" alt="Logo de la empresa" class="logo">
+                <h2>Iniciar Sesión</h2>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="modalEmail">Correo electrónico</label>
+                    <input type="email" id="modalEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalPassword">Contraseña</label>
+                    <input type="password" id="modalPassword" name="password" required>
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                
+                <div class="divider">
+                    <span>o</span>
+                </div>
+                
+                <button type="button" class="btn btn-google" id="modalGoogleSignIn">
+                    <img src="../Imagenes/Login/Google__G__logo.png" alt="Google logo">
+                    Continuar con Google
+                </button>
+                
+                <p class="signup-link">¿No tienes una cuenta? <a href="#" id="showSignupLink">Regístrate</a></p>
+            </form>
+        </div>
+        
+        <!-- Formulario de Registro (inicialmente oculto) -->
+        <div id="signupFormContainer" style="display: none;">
+            <div class="logo-container">
+                <img src="../Imagenes/Logoempresa.png" alt="Logo de la empresa" class="logo">
+                <h2>Crear Cuenta</h2>
+            </div>
+            
+            <form id="signupForm" class="signup-form">
+                <div class="form-group">
+                    <label for="signupName">Nombre completo</label>
+                    <input type="text" id="signupName" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">Correo electrónico</label>
+                    <input type="email" id="signupEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPassword">Contraseña</label>
+                    <input type="password" id="signupPassword" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Contraseña</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+                
+                <p class="login-link">¿Ya tienes una cuenta? <a href="#" id="showLoginLink">Inicia sesión</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/ui.js"></script>
+
+</body>
+</html>

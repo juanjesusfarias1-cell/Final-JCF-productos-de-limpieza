@@ -1,0 +1,74 @@
+/* =============================
+   BUSCADOR (Global)
+   ============================= */
+.search-container {
+    justify-self: center; /* centra el contenedor en la columna central */
+    width: 100%;
+    max-width: 650px; /* unificado con Productos */
+    margin: 0; /* elimina márgenes laterales que pueden descentrar */
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+}
+
+/* Envoltura del input para la X */
+.search-input-wrapper { 
+    position: relative; 
+    flex: 1; 
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+/* Espacio para la X dentro del input */
+#productSearchInput { 
+    padding-right: 40px; 
+}
+
+/* Botón X dentro del input */
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border: none;
+    background: transparent; /* dentro del rectángulo, sin fondo propio */
+    color: var(--placeholder-color, #888); /* mismo color que el placeholder */
+    cursor: pointer;
+    font-size: 18px;
+    display: none; /* visible solo cuando hay texto */
+}
+
+.search-form input::placeholder { 
+    color: var(--placeholder-color, #888); 
+}
+
+.clear-search-btn:hover { 
+    opacity: 0.8; 
+}
+
+.search-form button {
+    padding: 0 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background: #2980b9;
+}
