@@ -72,3 +72,48 @@
 .search-form button:hover {
     background: #2980b9;
 }
+
+/* Suggestions dropdown (used by js/search.js) */
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: none; /* JS toggles to block */
+  max-height: 260px;
+  overflow-y: auto;
+
+  .suggestion-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+
+    &:hover { background: #f7f9fc; }
+
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .suggestion-name {
+      flex: 1;
+      font-size: .9rem;
+      color: #000; /* ensure black text */
+    }
+  }
+}
