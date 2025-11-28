@@ -4,6 +4,10 @@
 @use "partials/banner";
 @use "partials/modal";
 
+/* Global reset for consistency across pages (with/without Bootstrap) */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
 /* =============================
    NAVEGACIÓN DERECHA (Global)
    ============================= */

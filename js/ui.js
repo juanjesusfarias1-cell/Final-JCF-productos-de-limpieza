@@ -98,5 +98,25 @@
       });
       actualizarX();
     }
+
+    // Mobile hamburger menu
+    try {
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileOverlay = document.getElementById('mobileOverlay');
+      function openMenu(){ if(mobileMenu){ mobileMenu.classList.add('open'); } if(mobileOverlay){ mobileOverlay.classList.add('show'); } }
+      function closeMenu(){ if(mobileMenu){ mobileMenu.classList.remove('open'); } if(mobileOverlay){ mobileOverlay.classList.remove('show'); } }
+      if (menuToggle && mobileMenu){
+        menuToggle.addEventListener('click', function(e){ e.preventDefault(); var isOpen = mobileMenu.classList.contains('open'); if(isOpen) closeMenu(); else openMenu(); });
+      }
+      if (mobileOverlay){ mobileOverlay.addEventListener('click', closeMenu); }
+      if (mobileMenu){
+        mobileMenu.addEventListener('click', function(e){
+          var t = e.target;
+          if (t.tagName === 'A') { closeMenu(); }
+        });
+      }
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+    } catch(e) { /* no-op */ }
   });
 })();

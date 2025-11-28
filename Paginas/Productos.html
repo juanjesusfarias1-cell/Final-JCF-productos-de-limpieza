@@ -23,11 +23,25 @@
 <body>
 <!-- Header -->
     <header>
+
         <!-- Logo y nombre de la empresa -->
         <div class="logo-container">
             <img src="../Imagenes/Logo Empresa/JCF sin fondo.png" alt="Logo empresa" class="logo-img">
             <p class="company-name">productos de limpieza</p>
         </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileOverlay" class="mobile-overlay"></div>
+        <aside id="mobileMenu" class="mobile-menu" aria-hidden="true">
+          <div class="mobile-links">
+            <a href="../index.html">Inicio</a>
+            <a href="Productos.html">Productos</a>
+            <a href="Contactos.html">Contactos</a>
+          </div>
+          <div class="mobile-footer">
+            <a href="#" onclick="document.getElementById('userBtn') && document.getElementById('userBtn').click(); return false;" class="nav-btn" style="display:inline-block;color:#333;border-color:rgba(0,0,0,0.15);background:#f5f7fa">Usuario</a>
+          </div>
+        </aside>
 
         <!-- Buscador centrado -->
         <div class="search-container">
@@ -42,6 +56,7 @@
 
         <!-- Navegación derecha -->
         <nav class="nav-right" aria-label="Navegación principal">
+            <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false"><span></span></button>
             <a href="../index.html" class="nav-btn">Inicio</a>
             <a href="Productos.html" class="nav-btn">Productos</a>
             <a href="Contactos.html" class="nav-btn">Contactos</a>

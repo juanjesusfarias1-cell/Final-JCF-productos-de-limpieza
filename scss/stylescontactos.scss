@@ -1,19 +1,23 @@
 .parrafo{
     color: #4FC3F7;
     text-align: center;
-    font-size: 75px;
     font-family: 'Arial', sans-serif;
-    font-size: 50px; /* Tamaño de la fuente */
-    margin-top: 50px;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-bottom: 15px;
-    line-height: 1;
-    list-style: 150px;
-    -webkit-text-stroke: 1px #333; /* Ancho y color del contorno */
-    text-shadow:
-    -1px -1px 0 black, /* Sombra izquierda-arriba */
-     1px -1px 0 black, /* Sombra derecha-arriba */
-    -1px  1px 0 black, /* Sombra izquierda-abajo */
-     1px  1px 0 black; /* Sombra derecha-abajo */
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.5vw + 1rem, 2.75rem);
+    max-width: 900px;
+    margin: 40px auto 16px;
+    padding: 0 16px;
+    line-height: 1.3;
+}
+
+@media (max-width: 992px){
+  .parrafo{ margin: 32px auto 14px; }
+}
+
+@media (max-width: 768px){
+  .parrafo{ margin: 24px auto 12px; }
+}
+
+@media (max-width: 480px){
+  .parrafo{ margin: 18px auto 10px; }
 }

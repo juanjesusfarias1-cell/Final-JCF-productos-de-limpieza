@@ -13,6 +13,76 @@ header {
     gap: 15px;
 }
 
+/* =============================
+   HAMBURGER (Mobile)
+   ============================= */
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.menu-toggle span,
+.menu-toggle::before,
+.menu-toggle::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  margin: 2px 0;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -6px 0 24px rgba(0,0,0,0.15);
+  transition: right .25s ease;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+.mobile-menu.open { right: 0; }
+
+.mobile-menu .mobile-links a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin-bottom: 8px;
+}
+.mobile-menu .mobile-links a:hover { background: #f5f7fa; }
+
+.mobile-menu .mobile-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding-top: 12px;
+}
+
+/* Overlay behind drawer */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(1px);
+  z-index: 1190;
+  display: none;
+}
+.mobile-overlay.show { display: block; }
+
 /* Logo y nombre de la empresa */
 .logo-container {
     display: flex;
