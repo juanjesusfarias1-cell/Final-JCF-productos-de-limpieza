@@ -358,6 +358,15 @@ footer {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Centrado en móviles */
+@media (max-width: 768px) {
+  .redes-sociales {
+    justify-content: center;
+  }
+  .icono-red {
+    margin: 0 6px;
+  }
+}
 .icono-red:hover {
   transform: translateY(-3px) scale(1.1);
   background: rgba(255, 255, 255, 0.2);
