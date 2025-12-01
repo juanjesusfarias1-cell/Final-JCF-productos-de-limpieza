@@ -1,9 +1,10 @@
 /* =============================
-   HEADER (Global)
+   ENCABEZADO (Global)
    ============================= */
 header {
     display: grid;
     grid-template-columns: 1fr auto 1fr; /* izquierda (logo) - centro (buscador) - derecha (nav) */
+    grid-template-areas: 'logo search nav';
     align-items: center;
     padding: 10px 5%;
     background: #4AB3E3;
@@ -14,7 +15,7 @@ header {
 }
 
 /* =============================
-   HAMBURGER (Mobile)
+   Menú hamburguesa (móvil)
    ============================= */
 .menu-toggle {
   display: none;
@@ -72,7 +73,7 @@ header {
   padding-top: 12px;
 }
 
-/* Overlay behind drawer */
+/* Superposición detrás del cajón */
 .mobile-overlay {
   position: fixed;
   inset: 0;
@@ -88,6 +89,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    grid-area: logo;
 }
 
 .logo-img {
@@ -103,6 +105,31 @@ header {
     white-space: nowrap;
 }
 
+/* Colocar el buscador en el área central del grid */
+.search-container {
+  grid-area: search;
+}
+
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'logo nav'
+      'search search';
+    gap: 12px;
+  }
+
+  /* Mostrar botón hamburguesa en móvil */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Ocultar enlaces de navegación para evitar desbordes */
+  .nav-right .nav-btn {
+    display: none;
+  }
+}
+
 /* =============================
    NAVEGACIÓN DERECHA (Global)
    ============================= */
@@ -112,6 +139,7 @@ header {
     gap: 10px;
     margin-left: 0; /* antes se usaba para flex, ya no es necesario */
     justify-self: end; /* alinea a la derecha dentro de la tercera columna */
+    grid-area: nav;
 }
 
 /* Botones de navegación */

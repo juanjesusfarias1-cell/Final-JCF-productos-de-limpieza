@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JFC Productos de Limpieza</title>
 
-    <!--FavIcons-->
+    <!-- Iconos (favicon) -->
+
     <link rel="icon" href="./Imagenes/Logo icon/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="../Imagenes/Logo icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../Imagenes/Logo icon/favicon-16x16.png">    
     <link rel="apple-touch-icon" sizes="180x180" href="../Imagenes/Logo icon/apple-touch-icon.png">
 
-    <!--Styles-->
+    <!-- Estilos -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/stylescontactos.css">
     <link rel="stylesheet" href="../CSS/modal.css">
 
-    <!--Keywords-->
+    <!-- Palabras clave -->
 
     <meta name="description" content="Tienda online de productos de limpieza. Detergentes, desinfectantes, aromatizantes y artículos de limpieza para el hogar y empresas. Envíos.">
     <meta name="keywords" 
@@ -27,16 +29,19 @@
     content="productos de limpieza en Rojas, venta de limpieza en Rojas, productos de limpieza envío rápido, distribuidora de limpieza en Buenos Aires">
 </head>
 <body>
-<!-- Header -->
+<!-- Encabezado -->
+
     <header>
 
         <!-- Logo y nombre de la empresa -->
+
         <div class="logo-container">
             <img src="../Imagenes/Logo Empresa/JCF sin fondo.png" alt="Logo empresa" class="logo-img">
             <p class="company-name">productos de limpieza</p>
         </div>
 
-        <!-- Mobile Drawer Menu -->
+        <!-- Menú móvil (cajón) -->
+
         <div id="mobileOverlay" class="mobile-overlay"></div>
         <aside id="mobileMenu" class="mobile-menu" aria-hidden="true">
           <div class="mobile-links">
@@ -62,6 +67,7 @@
         </div>
 
         <!-- Navegación derecha -->
+
         <nav class="nav-right" aria-label="Navegación principal">
             <button id="menuToggle" class="menu-toggle" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false"><span></span></button>
             <a href="../index.html" class="nav-btn">Inicio</a>
@@ -69,6 +75,7 @@
             <a href="Contactos.html" class="nav-btn">Contactos</a>
 
             <!-- Carrito -->
+
             <a href="carrito.html" class="nav-icon" id="cartLink">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="cart-count">0</span>
@@ -76,6 +83,7 @@
 
             
             <!-- Usuario -->
+
             <div class="user-section">
                 <a href="#" class="nav-icon" id="userBtn" aria-haspopup="true" aria-expanded="false" aria-controls="userDropdown">
                     <i class="fas fa-user-circle"></i>
@@ -87,7 +95,8 @@
             </div>
         </nav>
     </header>
-<!--Main-->
+<!-- Contenido principal -->
+
 <main class="main-content">
 
     <p class="parrafo">
@@ -99,7 +108,8 @@
 
 </main>
 
-<!-- Footer -->
+<!-- Pie de página -->
+
     <footer>
         <div class="footer-contenido">
             <div class="info-contacto">
@@ -127,11 +137,13 @@
     </footer>
 
 <!-- Modal de Inicio de Sesión/Registro -->
+
 <div id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
         
         <!-- Formulario de Inicio de Sesión -->
+
         <div id="loginFormContainer">
             <div class="logo-container">
                 <img src="../Imagenes/Logo Empresa/JCF sin fondo.png" alt="Logo de la empresa" class="logo">
@@ -166,6 +178,7 @@
         </div>
         
         <!-- Formulario de Registro (inicialmente oculto) -->
+
         <div id="signupFormContainer" style="display: none;">
             <div class="logo-container">
                 <img src="../Imagenes/Logo Empresa/JCF sin fondo.png" alt="Logo de la empresa" class="logo">
@@ -202,6 +215,7 @@
 </div>
 
     <!-- Scripts -->
+
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     <script src="../js/firebase-config.js"></script>

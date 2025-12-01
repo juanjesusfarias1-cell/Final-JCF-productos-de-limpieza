@@ -1,9 +1,9 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-    // Resolve base path for assets so it works from root and subpages
+    // Resolver la ruta base de los recursos para que funcione desde raíz y subpáginas
     var isInSubdir = /\/Paginas\//.test(window.location.pathname);
     var defaultAvatarPath = isInSubdir ? '../Imagenes/default-avatar.png' : './Imagenes/default-avatar.png';
-    // Auth-driven header UI (user avatar/name and dropdown)
+    // UI del encabezado basada en autenticación (avatar/nombre de usuario y menú desplegable)
     try {
       if (typeof auth !== 'undefined') {
         auth.onAuthStateChanged(function (user) {
@@ -37,10 +37,10 @@
         });
       }
     } catch (e) {
-      // no-op
+      // sin operación
     }
 
-    // Modal open/close (login/register)
+    // Abrir/cerrar modal (inicio de sesión/registro)
     var modal = document.getElementById('loginModal');
     var btn = document.getElementById('userBtn');
     var span = (document.getElementsByClassName('close-modal') || [])[0];
@@ -62,7 +62,7 @@
       }
     });
 
-    // Toggle between login and signup forms in modal (if present)
+    // Alternar entre formularios de inicio de sesión y registro en el modal (si existen)
     var loginFormContainer = document.getElementById('loginFormContainer');
     var signupFormContainer = document.getElementById('signupFormContainer');
     var showSignupLink = document.getElementById('showSignupLink');
@@ -83,7 +83,7 @@
       });
     }
 
-    // Header search clear button
+    // Botón para limpiar la búsqueda del encabezado
     var input = document.getElementById('productSearchInput') || document.querySelector('.search-form input[name="q"]');
     var clearBtn = document.getElementById('clearSearchBtn');
     if (input && clearBtn) {
@@ -99,7 +99,7 @@
       actualizarX();
     }
 
-    // Mobile hamburger menu
+    // Menú hamburguesa móvil
     try {
       var menuToggle = document.getElementById('menuToggle');
       var mobileMenu = document.getElementById('mobileMenu');
@@ -117,6 +117,6 @@
         });
       }
       document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
-    } catch(e) { /* no-op */ }
+    } catch(e) { /* sin operación */ }
   });
 })();

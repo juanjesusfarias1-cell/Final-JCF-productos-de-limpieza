@@ -15,7 +15,7 @@ header {
 }
 
 /* =============================
-   HAMBURGER (Mobile)
+   Menú hamburguesa (móvil)
    ============================= */
 .menu-toggle {
   display: none;
@@ -80,7 +80,7 @@ header {
   padding-top: 12px;
 }
 
-/* Overlay behind drawer */
+/* Superposición detrás del cajón */
 .mobile-overlay {
   position: fixed;
   inset: 0;
