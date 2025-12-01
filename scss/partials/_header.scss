@@ -45,33 +45,47 @@ header {
   top: 0;
   right: -100%;
   width: 80%;
-  height: 100vh;
-  background: #fff;
+  height: 93vh;
+  top: 0vh;
+  background: #A8E6FF;
   box-shadow: -6px 0 24px rgba(0,0,0,0.15);
   transition: right .25s ease;
   z-index: 1200;
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 12px;
+  overflow-y: auto;
 }
 .mobile-menu.open { right: 0; }
 
-.mobile-menu .mobile-links a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid rgba(0,0,0,0.08);
-  margin-bottom: 8px;
+.mobile-menu .mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
-.mobile-menu .mobile-links a:hover { background: #f5f7fa; }
+
+.mobile-menu .mobile-links .nav-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 6px;
+  /* Mejor contraste sobre fondo celeste del cajón */
+  color: #0b2b3a;
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu .mobile-links .nav-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
 
 .mobile-menu .mobile-footer {
   margin-top: auto;
   border-top: 1px solid rgba(0,0,0,0.08);
-  padding-top: 12px;
+  padding-top: 6px;
 }
+
+/* Heredar estilos de .nav-btn también en el footer del cajón */
 
 /* Superposición detrás del cajón */
 .mobile-overlay {
@@ -114,19 +128,53 @@ header {
   header {
     grid-template-columns: 1fr auto;
     grid-template-areas:
-      'logo nav'
-      'search search';
-    gap: 12px;
+      'logo logo'
+      'search nav';
+    gap: 8px;
+    padding: 8px 4%;
   }
 
   /* Mostrar botón hamburguesa en móvil */
   .menu-toggle {
     display: flex;
+    width: 36px;
+    height: 36px;
   }
 
   /* Ocultar enlaces de navegación para evitar desbordes */
   .nav-right .nav-btn {
     display: none;
+  }
+
+  /* Ocultar la sección de usuario en el header (ya está dentro del menú móvil) */
+  .user-section {
+    display: none;
+  }
+
+  /* Alinear acciones (hamburguesa + carrito) a la derecha en la segunda columna */
+  .nav-right {
+    justify-self: end;
+    align-self: center;
+    gap: 6px;
+  }
+
+  /* El buscador ocupa la primera columna de la segunda fila */
+  .search-container {
+    width: 100%;
+  }
+
+  .logo-img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .company-name {
+    font-size: 1.2rem;
+  }
+
+  .nav-icon {
+    width: 32px;
+    height: 32px;
   }
 }
 
