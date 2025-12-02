@@ -32,7 +32,12 @@
     if (idx >= 0){
       cart[idx].qty += item.qty || 1;
     } else {
-      cart.push({ id: item.id, name: item.name, price: item.price, image: item.image || '', qty: item.qty || 1 });
+      // Asegurar que la imagen tenga la ruta correcta para el carrito
+      var imgPath = item.image || '';
+      if (imgPath && imgPath.startsWith('./')) {
+        imgPath = '../' + imgPath.substring(2);
+      }
+      cart.push({ id: item.id, name: item.name, price: item.price, image: imgPath, qty: item.qty || 1 });
     }
     saveCart(cart);
   };
@@ -88,11 +93,22 @@
 
     var rows = cart.map(function(it){
       var subtotal = (it.price * it.qty);
+      var imgPath = it.image;
+      
+      // Ajustar ruta de imagen para carrito.html
+      if (imgPath && imgPath.startsWith('./')) {
+        imgPath = '../' + imgPath.substring(2);
+      } else if (imgPath && !imgPath.startsWith('../') && !imgPath.startsWith('http')) {
+        imgPath = '../Imagenes/Productos/' + imgPath.split('/').pop();
+      }
+      
       return (
         '<tr class="cart-row" data-id="'+it.id+'">'+
           '<td class="cart-item">'+
-            (it.image ? '<img src="'+it.image+'" alt="'+it.name+'">' : '')+
-            '<span>'+it.name+'</span>'+
+            '<div class="cart-item-img-container">'+
+              (imgPath ? '<img src="'+imgPath+'" alt="'+it.name+'" onerror="this.src=\'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjMwIiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzY2NiIgZm9udC1zaXplPSIxMCI+8J+RPC90ZXh0Pgo8L3N2Zz4=\';" class="cart-item-image">' : '')+
+            '</div>'+
+            '<span class="cart-item-name">'+it.name+'</span>'+
           '</td>'+
           '<td class="cart-price">$'+it.price.toFixed(2)+'</td>'+
           '<td class="cart-qty">'+
