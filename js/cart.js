@@ -25,7 +25,8 @@
     badges.forEach(function(b){ b.textContent = String(count); });
   }
 
-  function addItem(item){
+  // Hacer addItem accesible globalmente
+  window.addItem = function(item){
     var cart = loadCart();
     var idx = findIndex(cart, item.id);
     if (idx >= 0){
@@ -34,7 +35,7 @@
       cart.push({ id: item.id, name: item.name, price: item.price, image: item.image || '', qty: item.qty || 1 });
     }
     saveCart(cart);
-  }
+  };
   function removeItem(id){
     var cart = loadCart().filter(function(i){ return i.id !== id; });
     saveCart(cart);
