@@ -24,9 +24,7 @@
         const imgPath = product.image.replace(/^\.\//, `${baseImg}/`);
 
         productCard.innerHTML = `
-          <div style="width:100%; height:200px; background:#f0f0f0; display:flex; align-items:center; justify-content:center; color:#666; font-size:14px; border-radius:8px;">
-            🧼 Imagen no disponible
-          </div>
+          <img src="${imgPath}" alt="${product.name}" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNjY2IiBmb250LXNpemU9IjE0Ij7wn5E8L3RleHQ+Cjwvc3ZnPg==';" style="width:100%; height:200px; object-fit:cover; border-radius:8px;">
           <h3>${product.name}</h3>
           <p>Descripción breve de ${product.name.toLowerCase()}.</p>
           <p class="price">$${product.price.toLocaleString('es-AR')}</p>
