@@ -402,7 +402,6 @@ footer {
 /* Envoltura del input para la X */
 .search-input-wrapper {
   position: relative;
-  flex: 1;
 }
 
 .search-form input[type=text] {
