@@ -2,7 +2,7 @@
   // Catálogo base. Idealmente mantener sincronizado con Productos.html
   // id/slug generado desde el nombre en minúsculas con guiones
   window.PRODUCTS = [
-     { id: 'promo-jabon-liquido', name: 'Jabón líquido X5L', price: 8000, image: './Imagenes/Banner/Banner.png' },
+     { id: 'promo-jabon-liquido', name: 'Jabón líquido X5L', price: 8000, image: './Imagenes/Productos/promo-jabon-liquido.jpg' },
     { id: 'jabon-liquido', name: 'Jabón líquido', price: 1600, image: './Imagenes/Productos/JabonLiquido.jpg' },
     { id: 'suavizante', name: 'Suavizante', price: 1600, image: './Imagenes/Productos/Suavizante.jpg' },
     { id: 'cloro', name: 'Cloro', price: 1800, image: './Imagenes/Productos/Cloro.jpg' },
