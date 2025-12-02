@@ -28,8 +28,20 @@ header {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  position: relative;
 }
-.menu-toggle span,
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .menu-toggle::before,
 .menu-toggle::after {
   content: '';
@@ -37,7 +49,17 @@ header {
   width: 20px;
   height: 2px;
   background: currentColor;
-  margin: 2px 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-toggle::before {
+  top: 8px;
+}
+
+.menu-toggle::after {
+  bottom: 8px;
 }
 
 .mobile-menu {
@@ -124,55 +146,83 @@ header {
   grid-area: search;
 }
 
-@media (max-width: 768px) {
+/* Tablets y móviles - diseño vertical */
+@media (max-width: 992px) {
   header {
     grid-template-columns: 1fr auto;
     grid-template-areas:
-      'logo logo'
+      'logo nav'
       'search nav';
     gap: 8px;
     padding: 8px 4%;
   }
 
-  /* Mostrar botón hamburguesa en móvil */
+  /* Mostrar botón hamburguesa */
   .menu-toggle {
     display: flex;
     width: 36px;
     height: 36px;
   }
 
-  /* Ocultar enlaces de navegación para evitar desbordes */
+  /* Ocultar enlaces de navegación en tablets/móviles */
   .nav-right .nav-btn {
     display: none;
   }
 
-  /* Ocultar la sección de usuario en el header (ya está dentro del menú móvil) */
+  /* Ocultar sección de usuario en header */
   .user-section {
     display: none;
   }
 
-  /* Alinear acciones (hamburguesa + carrito) a la derecha en la segunda columna */
+  /* Alinear botones a la derecha */
   .nav-right {
-    justify-self: end;
+    justify-self: top;
     align-self: center;
-    gap: 6px;
+    gap: 20px;
   }
 
-  /* El buscador ocupa la primera columna de la segunda fila */
+  /* Buscador ocupa espacio completo */
   .search-container {
     width: 100%;
   }
 
   .logo-img {
-    width: 64px;
-    height: 64px;
+    width: 70px;
+    height: 70px;
   }
 
   .company-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .nav-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Móviles pequeños - ajustes adicionales */
+@media (max-width: 576px) {
+  header {
+    padding: 6px 3%;
+    gap: 6px;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+  }
+
+  .nav-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-toggle {
     width: 32px;
     height: 32px;
   }

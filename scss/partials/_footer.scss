@@ -2,16 +2,25 @@
    PIE DE PÁGINA (Global)
    ============================= */
 footer {
-    background: #4AB3E3;
+    background: linear-gradient(135deg, #4AB3E3 0%, #2196F3 100%);
     color: white;
-    padding: 20px 15%;
+    padding: 40px 15%;
     font-family: Arial, sans-serif;
-    min-height: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    margin-top: auto;
     width: 100%;
     box-sizing: border-box;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4FC3F7, #29B6F6, #0288D1);
 }
 
 .footer-contenido {
