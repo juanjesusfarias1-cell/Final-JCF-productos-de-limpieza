@@ -1,8 +1,3 @@
-/* Header duplicado removido: usar global styles */
-
-/* Buscador duplicado removido: usar global styles */
-
-/* Navegación duplicada removida: usar global styles */
 
 
 /* Centrar el texto del Productos */
@@ -72,9 +67,34 @@
     margin-top: 10px;
 }
 
-/* Footer duplicado removido: usar global styles */
+/* Botón Agregar al Carrito */
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #4FC3F7, #29B6F6);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-/* Modal duplicado removido: usar global styles */
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #29B6F6, #0288D1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(79, 195, 247, 0.3);
+}
+
 
 /* ==================================================
    MEDIA QUERIES - DISEÑO RESPONSIVO
