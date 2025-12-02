@@ -43,6 +43,6 @@
     { id: 'piedra-gato', name: 'Piedra para gato', price: 2000, image: './Imagenes/Productos/Piedra-para-gato.jpg' },
     { id: 'virulanas', name: 'Virulanas', price: 800, image: './Imagenes/Productos/Virulanas.jpg' },
     { id: 'regador-manguera', name: 'Regador para manguera', price: 2500, image: './Imagenes/Productos/Regador-para-manguera.jpg' },
-    { id: 'hipoclorito-pileta', name: 'Hipoclorito para pileta', price: 3000, image: './Imagenes/Productos/Virulanas.jpg' }
+    { id: 'hipoclorito-pileta', name: 'Hipoclorito para pileta', price: 3000, image: './Imagenes/Productos/Hipoclorito-para-pileta.jpg' }
   ];
 })();
